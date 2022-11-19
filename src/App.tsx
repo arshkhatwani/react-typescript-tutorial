@@ -45,6 +45,62 @@ lotsOfPeople = [
 // printName("Arsh Khatwani");
 // 'void' returns undefined and 'never' returns nothing at all
 
+/*
+interface Person {
+  name: string;
+  age?: number;
+}
+
+interface Profession extends Person {
+  profession: string;
+}
+*/
+
+/*
+type Person = {
+  name: string;
+  age?: number;
+};
+
+type Profession = Person & {
+  profession: string;
+};
+*/
+
+/*
+// Make type from interface
+interface Person {
+  name: string;
+  age?: number;
+}
+
+type Profession = Person & {
+  profession: string;
+};
+*/
+
+/*
+// Make interface from type
+type Person = {
+  name: string;
+  age?: number;
+};
+
+interface Profession extends Person {
+  profession: string;
+}
+*/
+
+/* 
+let eng: Profession = {
+  name: "arsh",
+  age: 22,
+  profession: "SDE",
+};
+
+console.log(eng);
+*/
+
 function App() {
   return (
     <div className="App">
