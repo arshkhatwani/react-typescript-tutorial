@@ -1,7 +1,7 @@
 import "./App.css";
 
 /*
-Basic types
+// Basic types
 let name: string = "arsh";
 let age: number = 10;
 let flag: boolean = false;
@@ -10,6 +10,15 @@ let role: [number, string];
 role = [10, "asd"];
 */
 
+/* 
+// Union types
+let age: number | string;
+age = 10;
+age = "10 years";
+*/
+
+/* 
+// Custom types
 type Person = {
   name: string;
   age: number;
@@ -24,6 +33,7 @@ lotsOfPeople = [
   { name: "arsh", age: 22, gender: "m" },
   { name: "sparsh", age: 18 },
 ];
+*/
 
 function App() {
   return (
