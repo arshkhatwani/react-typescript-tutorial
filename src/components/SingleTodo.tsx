@@ -10,9 +10,21 @@ type Props = {
 };
 
 const SingleTodo: React.FC<Props> = ({ todos, setTodos, todo }) => {
+  const handleDone = (id: number) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
+      )
+    );
+  };
+
   return (
     <form className="todos__single">
-      <span className="todos__single--text">{todo.todo}</span>
+      {todo.isDone ? (
+        <s className="todos__single--text">{todo.todo}</s>
+      ) : (
+        <span className="todos__single--text">{todo.todo}</span>
+      )}
 
       <div>
         <span>
@@ -22,7 +34,7 @@ const SingleTodo: React.FC<Props> = ({ todos, setTodos, todo }) => {
           <span className="icon">
             <AiFillDelete />
           </span>
-          <span className="icon">
+          <span className="icon" onClick={(e) => handleDone(todo.id)}>
             <MdDone />
           </span>
         </span>
