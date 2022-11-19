@@ -35,6 +35,16 @@ lotsOfPeople = [
 ];
 */
 
+//Function types
+// function printName(name: string) {
+//   console.log(name);
+// }
+// let printName = (name: string) => {
+//   console.log(name);
+// };
+// printName("Arsh Khatwani");
+// 'void' returns undefined and 'never' returns nothing at all
+
 function App() {
   return (
     <div className="App">
