@@ -7,9 +7,10 @@ type Props = {
   todo: Todo;
   todos: Todo[];
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+  index: number;
 };
 
-const SingleTodo: React.FC<Props> = ({ todos, setTodos, todo }) => {
+const SingleTodo: React.FC<Props> = ({ todos, setTodos, todo, index }) => {
   const [edit, setEdit] = useState<boolean>(false);
   const [editTodo, setEditTodo] = useState<string>(todo.todo);
 
