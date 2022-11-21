@@ -2,6 +2,7 @@ import React from "react";
 import { Droppable } from "react-beautiful-dnd";
 import { Todo } from "../model";
 import SingleTodo from "./SingleTodo";
+import "./styles.css";
 
 interface Props {
   todos: Todo[];
@@ -19,9 +20,9 @@ const TodoList: React.FC<Props> = ({
   return (
     <div className="container">
       <Droppable droppableId="TodosList">
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
-            className="todos"
+            className={`todos ${snapshot.isDraggingOver ? "dragactive" : ""}`}
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
@@ -35,14 +36,17 @@ const TodoList: React.FC<Props> = ({
                 index={index}
               />
             ))}
+            {provided.placeholder}
           </div>
         )}
       </Droppable>
 
       <Droppable droppableId="TodosRemove">
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
-            className="todos remove"
+            className={`todos remove ${
+              snapshot.isDraggingOver ? "dragcomplete" : ""
+            }`}
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
@@ -57,6 +61,7 @@ const TodoList: React.FC<Props> = ({
                 index={index}
               />
             ))}
+            {provided.placeholder}
           </div>
         )}
       </Droppable>
